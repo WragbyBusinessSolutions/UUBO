@@ -8,6 +8,7 @@ namespace UUBO.Models.AccountViewModels
 {
     public class RegisterViewModel
     {
+   
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
@@ -23,5 +24,10 @@ namespace UUBO.Models.AccountViewModels
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+    
+        [Required]
+        [Display(Name = "Phone Number")]
+        public string PhoneNo { get; set; }
+
     }
 }
