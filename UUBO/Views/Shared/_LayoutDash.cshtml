@@ -109,8 +109,17 @@
     <script src="~/js/DataTables/Buttons-1.5.6/js/buttons.colVis.js"></script>
     <script src="~/js/DataTables/Buttons-1.5.6/js/buttons.html5.js"></script>
     <script src="~/js/DataTables/Buttons-1.5.6/js/buttons.print.js"></script>
+    <script src="~/js/demo.js"></script>
     <script>
-        $(document).ready(function () {
+
+      
+
+      $(document).ready(function () {
+           // Initialise the wizard
+    demo.initNowUiWizard();
+    setTimeout(function() {
+      $('.card.card-wizard').addClass('active');
+    }, 600);
             $('#datatable').DataTable({
                 "pagingType": "full_numbers",
                 dom: 'Bfrtip',
