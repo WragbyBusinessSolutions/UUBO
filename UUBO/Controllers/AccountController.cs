@@ -65,7 +65,24 @@ namespace UUBO.Controllers
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return RedirectToLocal(returnUrl);
+                    var user = await _userManager.FindByEmailAsync(model.Email);
+                    var isadmin = await _userManager.IsInRoleAsync(user, "Admin");
+                    if (isadmin)
+                    {
+                        if (returnUrl == null)
+                        {
+                            returnUrl = returnUrl ?? Url.Content("~/AdministratorDashboard/");
+
+                        }
+                        return Redirect(returnUrl);
+
+                    }
+                    else
+                    {
+                        //returnUrl = returnUrl ?? Url.Content("~/CustomerDashboard");
+                        return RedirectToLocal(returnUrl);
+
+                    }
                 }
                 if (result.RequiresTwoFactor)
                 {
@@ -220,11 +237,12 @@ namespace UUBO.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, PhoneNumber = model.PhoneNo };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
+                    await _userManager.AddToRoleAsync(user, "User");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     var callbackUrl = Url.EmailConfirmationLink(user.Id, code, Request.Scheme);

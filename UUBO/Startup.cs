@@ -65,7 +65,7 @@ namespace UUBO
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider provider)
         {
             if (env.IsDevelopment())
             {
@@ -91,6 +91,31 @@ namespace UUBO
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            CreateUserRoles(provider).Wait();
+
+        }
+        private async Task CreateUserRoles(IServiceProvider serviceProvider)
+        {
+            var RoleManager = serviceProvider.GetRequiredService<RoleManager<ApplicationRole>>();
+            //var UserManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+
+
+
+            IdentityResult roleResult;
+            //Adding Admin Role 
+            var AdminroleCheck = await RoleManager.RoleExistsAsync("Admin");
+            var UserroleCheck = await RoleManager.RoleExistsAsync("User");
+
+            if (!AdminroleCheck)
+            {
+                roleResult = await RoleManager.CreateAsync(new ApplicationRole("Admin"));
+            }
+            if (!UserroleCheck)
+            {
+                roleResult = await RoleManager.CreateAsync(new ApplicationRole("User"));
+            }
+
+
         }
     }
 }

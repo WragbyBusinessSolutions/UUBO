@@ -3,10 +3,10 @@
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
     <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+        <a href="#" class="simple-text logo-mini">
             
         </a>
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        <a asp-controller="Home" asp-action="Index" class="simple-text logo-normal">
             uubo
         </a>
         <div class="navbar-minimize">
@@ -17,10 +17,10 @@
         </div>
     </div>
     <div class="sidebar-wrapper">
-       
+        
         <ul class="nav">
             <li class="active">
-                <a href="../examples/dashboard.html">
+                <a asp-action="Index" asp-controller="Home">
                     <i class="now-ui-icons design_app"></i>
                     <p>Dashboard</p>
                 </a>
