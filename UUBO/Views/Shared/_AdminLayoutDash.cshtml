@@ -24,6 +24,30 @@
 
 
 <body class=" sidebar-mini">
+    <div class="wrapper ">
+        @await Html.PartialAsync("_AdminDashLayoutAside")
+
+        <div class="main-panel">
+
+
+            @await Html.PartialAsync("_AdminLayoutDashHeader")
+            <div class="panel-header">
+            </div>
+            <div class="content">
+
+
+                @RenderBody()
+
+            </div>
+            @await Html.PartialAsync("_AdminLayoutDashFooter")
+
+
+        </div>
+
+
+
+    </div>
+
 
 
 
@@ -44,40 +68,9 @@
                 crossorigin="anonymous"
                 integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
         </script>
+
+
     </environment>
-
-
-
-    <div class="wrapper ">
-        @await Html.PartialAsync("_CustDashLayoutAside")
-
-        <div class="main-panel">
-
-
-            @await Html.PartialAsync("_LayoutDashHeader")
-            <div class="panel-header">
-            </div>
-            <div class="content">
-
-
-                @RenderBody()
-
-            </div>
-            @await Html.PartialAsync("_LayoutDashFooter")
-
-
-        </div>
-
-
-
-    </div>
-
-
-
-
-
-
-
     <script src="~/js/core/popper.min.js"></script>
     <script src="~/js/plugins/perfect-scrollbar.jquery.min.js"></script>
     <script src="~/js/plugins/moment.min.js"></script>
@@ -97,7 +90,7 @@
 
 
 
-
+  
 
 
 
@@ -112,14 +105,14 @@
     <script src="~/js/demo.js"></script>
     <script>
 
+      
 
-
-        $(document).ready(function () {
-            // Initialise the wizard
-            demo.initNowUiWizard();
-            setTimeout(function () {
-                $('.card.card-wizard').addClass('active');
-            }, 600);
+      $(document).ready(function () {
+           // Initialise the wizard
+    demo.initNowUiWizard();
+    setTimeout(function() {
+      $('.card.card-wizard').addClass('active');
+    }, 600);
             $('#datatable').DataTable({
                 "pagingType": "full_numbers",
                 dom: 'Bfrtip',
