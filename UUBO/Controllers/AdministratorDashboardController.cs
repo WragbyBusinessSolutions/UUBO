@@ -9,7 +9,7 @@ using UUBO.Models;
 
 namespace UUBO.Controllers
 {
-    [Authorize(Roles ="Admin")]
+    //[Authorize(Roles ="Admin")]
     public class AdministratorDashboardController : Controller
     {
         public IActionResult Index()
