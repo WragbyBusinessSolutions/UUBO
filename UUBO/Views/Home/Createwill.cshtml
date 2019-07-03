@@ -3,8 +3,6 @@
   Layout = "_LayoutDash";
 }
 
-
-
 <div class="content">
   <div class="col-md-10 mr-auto ml-auto">
     <!--      Wizard container        -->
@@ -28,12 +26,22 @@
                 </li>
                 <li class="nav-item" style="width: 33.3333%;">
                   <a class="nav-link" href="#executor" data-toggle="tab">
-                    <i class="now-ui-icons ui-1_settings-gear-63"></i> executor
+                    <i class="now-ui-icons users_circle-08"></i> primary executor
+                  </a>
+                </li>
+                <li class="nav-item" style="width: 33.3333%;">
+                  <a class="nav-link" href="#secexecutor" data-toggle="tab">
+                    <i class="now-ui-icons users_circle-08"></i> secondary executor
                   </a>
                 </li>
                 <li class="nav-item" style="width: 33.3333%;">
                   <a class="nav-link" href="#children" data-toggle="tab">
                     <i class="now-ui-icons users_circle-08"></i> children
+                  </a>
+                </li>
+                <li class="nav-item" style="width: 33.3333%;">
+                  <a class="nav-link" href="#guardian" data-toggle="tab">
+                    <i class="now-ui-icons users_circle-08"></i> guardian
                   </a>
                 </li>
                 <li class="nav-item" style="width: 33.3333%;">
@@ -49,6 +57,7 @@
               </ul>
             </div>
           </div>
+
           <div class="card-body">
             <div class="tab-content">
               <div class="tab-pane fade show active" id="testator">
@@ -57,44 +66,67 @@
                   <div class="card-body">
                     <form>
                       <div class="row">
-                        <div class="col-md-4 pr-1">
+
+                        <div class="col-md-3 pr-1">
+
                           <div class="form-group">
                             <label>First Name</label>
                             <input type="text" class="form-control" placeholder="First Name" value="">
                           </div>
                         </div>
-                        <div class="col-md-4 px-1">
+
+                        <div class="col-md-3 px-1">
                           <div class="form-group">
                             <label>Middle Name</label>
                             <input type="text" class="form-control" placeholder="Middle Name" value="">
                           </div>
                         </div>
-                        <div class="col-md-4 pl-1">
+
+                        <div class="col-md-3 pl-1">
                           <div class="form-group">
                             <label for="exampleInputEmail1">Last Name</label>
-                            <input type="email" class="form-control" placeholder="Last Name">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-4 pr-1">
-                          <div class="form-group">
-                            <label>Phone Number</label>
-                            <input type="text" class="form-control" placeholder="Phone Number" value="">
+                            <input type="text" class="form-control" placeholder="Last Name">
                           </div>
                         </div>
 
+                        <div class="col-md-3 pl-1">
+                          <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="number" class="form-control" placeholder="Phone Number" value="">
+                          </div>
+                        </div>
+                        
+                      </div>
+
+                      <div class="row">
+                        
                         <div class="col-md-4 pr-1">
                           <div class="form-group">
                             <label>Home</label>
-                            <input type="text" class="form-control" placeholder="Home Phone" value="">
+                            <input type="number" class="form-control" placeholder="Home Phone" value="">
                           </div>
                         </div>
 
                         <div class="col-md-4 pr-1">
                           <div class="form-group">
                             <label>Office</label>
-                            <input type="text" class="form-control" placeholder="Office Cell" value="">
+                            <input type="number" class="form-control" placeholder="Office Cell" value="">
+                          </div>
+                        </div>
+
+                        <div class="col-md-4 pl-1">
+                          <div class="form-group">
+                            <label>E-Mail</label>
+                            <input type="email" class="form-control" placeholder="example@mail.com" value="">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-8">
+                          <div class="form-group">
+                            <label>Address</label>
+                            <input type="text" class="form-control" placeholder="Home Address" value="">
                           </div>
                         </div>
 
@@ -105,21 +137,6 @@
                           </div>
                         </div>
 
-                        <div class="col-md-8 pl-1">
-                          <div class="form-group">
-                            <label>E-Mail</label>
-                            <input type="text" class="form-control" placeholder="example@mail.com" value="">
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <label>Address</label>
-                            <input type="text" class="form-control" placeholder="Home Address" value="">
-                          </div>
-                        </div>
                       </div>
 
                       <div class="row">
@@ -134,7 +151,7 @@
                         <div class="col-md-3 pr-1">
                           <div class="form-group">
                             <label>Number of Children</label>
-                            <input type="text" class="form-control" placeholder="Number of Children" value="">
+                            <input type="number" class="form-control" placeholder="Number of Children" value="">
                           </div>
                         </div>
 
@@ -143,6 +160,7 @@
                             <label>Gender</label>
                             <div class="form-group">
                               <select class="form-control">
+                                <option>--select--</option>
                                 <option>Male</option>
                                 <option>Female</option>
                               </select>
@@ -155,25 +173,19 @@
                             <label>Marital Status</label>
                             <div class="form-group">
                               <select class="form-control">
+                                <option>--select--</option>
                                 <option>Single</option>
                                 <option>Married</option>
                                 <option>Divorce</option>
+                                <option>Widowed</option>
                               </select>
                             </div>
                           </div>
-
-
                         </div>
                       </div>
-
-
                     </form>
                   </div>
                 </div>
-
-
-
-
               </div>
 
               <div class="tab-pane fade" id="executor">
@@ -182,36 +194,37 @@
                   <div class="card-body">
                     <form>
                       <div class="row">
-                        <div class="col-md-6 ">
+                        <div class="col-md-12 ">
                           <h4>Primary Executor</h4>
                           <div class="row">
-                            <div class="col-md-6 ">
+
+                            <div class="col-md-4 ">
                               <div class="form-group">
                                 <label>Name</label>
                                 <input type="text" class="form-control" placeholder="Full Name" value="">
                               </div>
                             </div>
-                            <div class="col-md-6 ">
+
+                            <div class="col-md-4 ">
                               <div class="form-group">
                                 <label>Phone</label>
-                                <input type="text" class="form-control" placeholder="Phone Number" value="">
+                                <input type="number" class="form-control" placeholder="Phone Number" value="">
                               </div>
                             </div>
-                          </div>
 
-                          <div class="row">
-                            <div class="col-md-12 ">
+                            <div class="col-md-4 ">
                               <div class="form-group">
-                                <label>Address</label>
+                                <label>Occupation</label>
                                 <input type="text" class="form-control" placeholder="Address" value="">
                               </div>
                             </div>
+                            
                           </div>
 
                           <div class="row">
-                            <div class="col-md-6 ">
+                            <div class="col-md-9 ">
                               <div class="form-group">
-                                <label>Occupation</label>
+                                <label>Adress</label>
                                 <input type="text" class="form-control" placeholder="Occupation" value="">
                               </div>
                             </div>
@@ -221,6 +234,7 @@
                                 <label>Relationship</label>
                                 <div class="form-group">
                                   <select class="form-control">
+                                    <option>--select--</option>
                                     <option>Father</option>
                                     <option>Mother</option>
                                     <option>Brother</option>
@@ -234,86 +248,25 @@
                             </div>
 
                           </div>
-
-                        </div>
-
-                        <div class="col-md-6">
-                          <h4>Secondary Executor</h4>
+                        
                           <div class="row">
-                            <div class="col-md-6 ">
-                              <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" class="form-control" placeholder="Full Name" value="">
-                              </div>
-                            </div>
-                            <div class="col-md-6 ">
-                              <div class="form-group">
-                                <label>Phone</label>
-                                <input type="text" class="form-control" placeholder="Phone Number" value="">
-                              </div>
-                            </div>
-                          </div>
 
-                          <div class="row">
-                            <div class="col-md-12 ">
-                              <div class="form-group">
-                                <label>Address</label>
-                                <input type="text" class="form-control" placeholder="Address" value="">
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="row">
-                            <div class="col-md-6 ">
-                              <div class="form-group">
-                                <label>Occupation</label>
-                                <input type="text" class="form-control" placeholder="Occupation" value="">
-                              </div>
-                            </div>
-
-                            <div class="col-md-3 pl-1">
-                              <div class="form-group">
-                                <label>Relationship</label>
-                                <div class="form-group">
-                                  <select class="form-control">
-                                    <option>Father</option>
-                                    <option>Mother</option>
-                                    <option>Brother</option>
-                                    <option>Sister</option>
-                                    <option>Wife</option>
-                                    <option>Husband</option>
-                                    <option>Others</option>
-                                  </select>
-                                </div>
-                              </div>
-                            </div>
-
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-md-12 ">
-                          <div class="row">
                             <div class="col-md-4 ">
                               <label class="col-md-6 col-form-label">Charging Clause</label>
                               <div class="col-md-6 checkbox-radios">
                                 <div class="form-check">
                                   <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox">
-                                    <span class="form-check-sign"></span>
+                                    <input class="form-check-input" type="radio" name="answer">
                                     Yes
                                   </label>
                                 </div>
                                 <div class="form-check">
                                   <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox">
-                                    <span class="form-check-sign"></span>
+                                    <input class="form-check-input" type="radio" name="answer">
                                     No
                                   </label>
                                 </div>
                               </div>
-
                             </div>
 
                             <div class="col-md-4 ">
@@ -321,35 +274,147 @@
                               <div class="col-md-6 checkbox-radios">
                                 <div class="form-check">
                                   <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox">
-                                    <span class="form-check-sign"></span>
+                                    <input class="form-check-input" type="radio" name="answer1">
                                     Yes
                                   </label>
                                 </div>
                                 <div class="form-check">
                                   <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox">
-                                    <span class="form-check-sign"></span>
+                                    <input class="form-check-input" type="radio" name="answer1">
                                     No
                                   </label>
                                 </div>
                               </div>
-
                             </div>
 
                             <div class="col-md-4 ">
                               <label class="col-md-6 col-form-label">Special Instruction</label>
-
-                              <textarea rows="4" cols="50" name="comment" form="usrform">   Enter text here...
-                            </textarea>
+                              <input type="text" class="form-control" placeholder="Occupation" value="">
                             </div>
-
-
 
                           </div>
                         </div>
-                      </div>
 
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="secexecutor">
+                <div class="col-md-12">
+
+                  <div class="card-body">
+                    <form>
+                      <div class="row">
+                        <div class="col-md-12 ">
+                          <h4>Secondary Executor</h4>
+                          <div class="row">
+
+                            <div class="col-md-4 ">
+                              <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" class="form-control" placeholder="Full Name" value="">
+                              </div>
+                            </div>
+
+                            <div class="col-md-4 ">
+                              <div class="form-group">
+                                <label>Phone</label>
+                                <input type="number" class="form-control" placeholder="Phone Number" value="">
+                              </div>
+                            </div>
+
+                            <div class="col-md-4 ">
+                              <div class="form-group">
+                                <label>Occupation</label>
+                                <input type="text" class="form-control" placeholder="Address" value="">
+                              </div>
+                            </div>
+                            
+                          </div>
+
+                          <div class="row">
+                            
+                            <div class="col-md-9 ">
+                              <div class="form-group">
+                                <label>Adress</label>
+                                <input type="text" class="form-control" placeholder="Occupation" value="">
+                              </div>
+                            </div>
+
+                            <div class="col-md-3 pl-1">
+                              <div class="form-group">
+                                <label>Relationship</label>
+                                <div class="form-group">
+                                  <select class="form-control">
+                                    <option>--select--</option>
+                                    <option>Father</option>
+                                    <option>Mother</option>
+                                    <option>Brother</option>
+                                    <option>Sister</option>
+                                    <option>Wife</option>
+                                    <option>Husband</option>
+                                    <option>Others</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        
+                          <div class="row">
+
+                            <div class="col-md-3">
+                              <label class="col-md-6 col-form-label">Charging Clause</label>
+                              <div class="col-md-6 checkbox-radios">
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="answer">
+                                    Yes
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="answer">
+                                    No
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-md-4 ">
+                              <label class="col-md-6 col-form-label">Burial/Cremation</label>
+                              <div class="col-md-6 checkbox-radios">
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="answer1">
+                                    Yes
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="answer1">
+                                    No
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-md-4">
+                              <label class="col-md-6 col-form-label">Special Instruction</label>
+                              <input type="text" class="form-control" placeholder="Occupation" value="">
+                            </div>
+
+                            <div class="col-md-1">
+                              <label></label>
+                              <a class="btn btn-success" id="btnAdd"><i class="fa fa-plus"></i></a>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </div>
                     </form>
                   </div>
                 </div>
@@ -361,58 +426,79 @@
                   <div class="card-body">
                     <form>
                       <div class="row">
-                        <div class="col-md-6 ">
+                        <div class="col-md-12 ">
                           <h4>Children</h4>
                           <div class="row">
-                            <div class="col-md-6 ">
+
+                            <div class="col-md-4 ">
                               <div class="form-group">
                                 <label>Name</label>
                                 <input type="text" class="form-control" placeholder="Full Name" value="">
                               </div>
                             </div>
-                            <div class="col-md-6 ">
+
+                            <div class="col-md-3">
                               <div class="form-group">
                                 <label>Date of Birth</label>
                                 <input type="date" class="form-control" value="">
                               </div>
                             </div>
+
+                            <div class="col-md-4 ">
+                              <label class="col-md-6 col-form-label">Special Instruction</label>
+                              <input type="text" class="form-control" placeholder="Occupation" value="">
+                            </div>
+
+                            <div class="col-md-1">
+                              <label></label>
+                              <a class="btn btn-success" id="btnAdd"><i class="fa fa-plus"></i></a>
+                            </div>
+
                           </div>
-
-
                         </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
 
-                        <div class="col-md-6">
+              <div class="tab-pane fade" id="guardian">
+                <div class="col-md-12">
+
+                  <div class="card-body">
+                    <form>
+                      <div class="row">
+                        <div class="col-md-12">
                           <h4>Guardian</h4>
                           <div class="row">
-                            <div class="col-md-6 ">
+
+                            <div class="col-md-3">
                               <div class="form-group">
                                 <label>Name</label>
                                 <input type="text" class="form-control" placeholder="Full Name" value="">
                               </div>
                             </div>
-                            <div class="col-md-6 ">
+
+                            <div class="col-md-3">
                               <div class="form-group">
                                 <label>E-mail</label>
-                                <input type="text" class="form-control" placeholder="example@mail.com" value="">
+                                <input type="email" class="form-control" placeholder="example@mail.com" value="">
                               </div>
                             </div>
-                          </div>
 
-                          <div class="row">
-
-                            <div class="col-md-9 ">
+                            <div class="col-md-3">
                               <div class="form-group">
                                 <label>Address</label>
                                 <input type="text" class="form-control" placeholder="Address" value="">
                               </div>
                             </div>
 
-
-                            <div class="col-md-3 pl-1">
+                            <div class="col-md-2 pl-1">
                               <div class="form-group">
                                 <label>Relationship</label>
                                 <div class="form-group">
                                   <select class="form-control">
+                                    <option>--select--</option>
                                     <option>Father</option>
                                     <option>Mother</option>
                                     <option>Brother</option>
@@ -424,68 +510,15 @@
                                 </div>
                               </div>
                             </div>
-                          </div>
-                        </div>
-                      </div>
 
-                      <div class="row">
-                        <div class="col-md-12 ">
-                          <div class="row">
-                            <div class="col-md-4 ">
-                              <label class="col-md-6 col-form-label">Charging Clause</label>
-                              <div class="col-md-6 checkbox-radios">
-                                <div class="form-check">
-                                  <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox">
-                                    <span class="form-check-sign"></span>
-                                    Yes
-                                  </label>
-                                </div>
-                                <div class="form-check">
-                                  <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox">
-                                    <span class="form-check-sign"></span>
-                                    No
-                                  </label>
-                                </div>
-                              </div>
-
+                            <div class="col-md-1">
+                              <label></label>
+                              <a class="btn btn-success" id="btnAdd"><i class="fa fa-plus"></i></a>
                             </div>
-
-                            <div class="col-md-4 ">
-                              <label class="col-md-6 col-form-label">Burial/Cremation</label>
-                              <div class="col-md-6 checkbox-radios">
-                                <div class="form-check">
-                                  <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox">
-                                    <span class="form-check-sign"></span>
-                                    Yes
-                                  </label>
-                                </div>
-                                <div class="form-check">
-                                  <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox">
-                                    <span class="form-check-sign"></span>
-                                    No
-                                  </label>
-                                </div>
-                              </div>
-
-                            </div>
-
-                            <div class="col-md-4 ">
-                              <label class="col-md-6 col-form-label">Special Instruction</label>
-
-                              <textarea rows="4" cols="50" name="comment" form="usrform">   Enter text here...
-                            </textarea>
-                            </div>
-
-
 
                           </div>
                         </div>
                       </div>
-
                     </form>
                   </div>
                 </div>
@@ -498,58 +531,55 @@
                   <div class="card-body">
                     <form>
                       <div class="row">
-                        <div class="col-md-4 pr-1">
+
+                        <div class="col-md-3 pr-1">
                           <div class="form-group">
                             <label>First Name</label>
                             <input type="text" class="form-control" placeholder="First Name" value="">
                           </div>
                         </div>
-                        <div class="col-md-4 px-1">
+
+                        <div class="col-md-3 px-1">
                           <div class="form-group">
                             <label>Middle Name</label>
                             <input type="text" class="form-control" placeholder="Middle Name" value="">
                           </div>
                         </div>
-                        <div class="col-md-4 pl-1">
+
+                        <div class="col-md-3 pl-1">
                           <div class="form-group">
-                            <label for="exampleInputEmail1">Last Name</label>
-                            <input type="email" class="form-control" placeholder="Last Name">
+                            <label >Last Name</label>
+                            <input type="text" class="form-control" placeholder="Last Name">
                           </div>
                         </div>
-                      </div>
 
-                      <div class="row">
-                        <div class="col-md-6 pr-1">
+                        <div class="col-md-3 pl-1">
                           <div class="form-group">
                             <label>Phone Number</label>
                             <input type="text" class="form-control" placeholder="Phone Number" value="">
                           </div>
                         </div>
 
-                        <div class="col-md-6 pl-1">
-                          <div class="form-group">
-                            <label>Relationship</label>
-                            <input type="text" class="form-control" placeholder="Relationship" value="">
-                          </div>
-                        </div>
                       </div>
 
                       <div class="row">
-                        <div class="col-md-12 pr-1">
+                        <div class="col-md-8 pr-1">
                           <div class="form-group">
                             <label>Address</label>
                             <input type="text" class="form-control" placeholder="Enter Address" value="">
                           </div>
                         </div>
-                      </div>
 
-                      <div class="row">
                         <div class="col-md-4 pr-1">
                           <div class="form-group">
                             <label>City</label>
                             <input type="text" class="form-control" placeholder="City" value="">
                           </div>
                         </div>
+                        
+                      </div>
+
+                      <div class="row">
 
                         <div class="col-md-4 pr-1">
                           <div class="form-group">
@@ -564,35 +594,36 @@
                             <input type="text" class="form-control" placeholder="Country" value="">
                           </div>
                         </div>
-                      </div>
 
-                      <div class="row">
-                        <div class="col-md-6 pr-1">
-                          <div class="form-group">
-                            <label>Phone Number</label>
-                            <input type="text" class="form-control" placeholder="Phone Number" value="">
-                          </div>
-                        </div>
-
-                        <div class="col-md-6 pl-1">
+                        <div class="col-md-3 pl-1">
                           <div class="form-group">
                             <label>Relationship</label>
-                            <input type="text" class="form-control" placeholder="example@mail.com" value="">
+                            <div class="form-group">
+                              <select class="form-control">
+                                <option>--select--</option>
+                                <option>Father</option>
+                                <option>Mother</option>
+                                <option>Brother</option>
+                                <option>Sister</option>
+                                <option>Wife</option>
+                                <option>Husband</option>
+                                <option>Others</option>
+                              </select>
+                            </div>
                           </div>
                         </div>
+
+                        <div class="col-md-1">
+                          <label></label>
+                          <a class="btn btn-success" id="btnAdd"><i class="fa fa-plus"></i></a>
+                        </div>
+
                       </div>
-
-
-
-
                     </form>
                   </div>
                 </div>
-
-
-
-
               </div>
+
               <div class="tab-pane fade" id="asset">
                 <div class="col-md-12">
                   @*<div class="card">*@
@@ -606,9 +637,7 @@
                               <label>Asset Details</label>
                             </div>
                             <div class="col-md-9">
-                              <textarea rows="4" cols="50" placeholder="Enter Details">
-                                                          
-                            </textarea>
+                              <textarea rows="4" cols="50" placeholder="Enter Details"></textarea>
                             </div>
                           </div>
                         </div>
@@ -632,8 +661,7 @@
                               <label>Substitutional Gift</label>
                             </div>
                             <div class="col-md-9">
-                              <textarea rows="4" cols="50" placeholder="Enter Details">
-                            </textarea>
+                              <textarea rows="4" cols="50" placeholder="Enter Details"></textarea>
                             </div>
                           </div>
                         </div>
@@ -648,31 +676,13 @@
                           </div>
                         </div>
                       </div>
-
-
-
-
-
-
-
-
-
-
-
-
                     </form>
                   </div>
                 </div>
-
-
-
-
                 <br />
               </div>
             </div>
           </div>
-
-
 
           <div class="card-footer">
             <div class="pull-right">
@@ -693,12 +703,7 @@
   </div>
 </div>
 
-
-
-
-
 <script src="../../assets/js/plugins/jquery.bootstrap-wizard.js"></script>
-
 
 <script>
   $(document).ready(function () {
