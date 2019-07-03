@@ -8,7 +8,14 @@ namespace UUBO.Models
 {
   public class Will
   { 
-    [Display (Name = "Testator's Full Name")]
+
+          [Key]
+        public string WillId { get; set; }
+        //[Display(Name = "Will Name")]
+        //public string WillOwner { get; set; }
+
+
+        [Display (Name = "Testator's Full Name")]
     public string TestFullName { get; set; }
 
     [Display(Name = "Testator's Address")]

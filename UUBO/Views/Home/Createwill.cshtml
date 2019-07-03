@@ -16,9 +16,9 @@
             <h3 class="card-title">
               Create Your Will
             </h3>
-            <h5 class="description">
-              This information will let us know more about you.
-            </h5>
+            @*<h5 class="description">
+              Create your Will.
+            </h5>*@
             <div class="wizard-navigation">
               <ul class="nav nav-pills">
                 <li class="nav-item" style="width: 33.3333%;">
@@ -677,8 +677,9 @@
           <div class="card-footer">
             <div class="pull-right">
               <input type='button' class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Next' />
-              <input type="button" class="btn btn-finish btn-fill btn-rose btn-wd" name="finish" value="Save" style="display: none;">
-              <input type='button' class='btn btn-finish btn-fill btn-rose btn-wd' name='Save' value='Submit' />
+              <a asp-action="Preview" asp-controller="Home" class="btn btn-finish btn-fill btn-rose btn-wd" name="finish" value="Save" style="display: none;">Preview</a>
+              <a asp-action="Index" asp-controller="Home" class='btn btn-finish btn-fill btn-rose btn-wd' name='Save'>Submit</a>
+              <a asp-action="Save" asp-controller="Home" class='btn btn-finish btn-fill btn-rose btn-wd' name='Save'>Save</a>
             </div>
             <div class="pull-left">
               <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />
