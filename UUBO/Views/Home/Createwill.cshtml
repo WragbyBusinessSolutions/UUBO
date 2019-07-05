@@ -4,7 +4,7 @@
 }
 
 <div class="content">
-  <div class="col-md-10 mr-auto ml-auto">
+  <div class="col-md-14 mr-auto ml-auto">
     <!--      Wizard container        -->
     <div class="wizard-container">
       <div class="card card-wizard" data-color="primary" id="wizardProfile">
@@ -406,8 +406,7 @@
                               <input type="text" class="form-control" placeholder="Instructions" value="">
                             </div>
 
-                            <div class="col-md-1">
-                              <label></label>
+                            <div class="col-md-1" style="margin-top: 17px;">
                               <a class="btn btn-success" id="btnAdd"><i class="fa fa-plus"></i></a>
                             </div>
 
@@ -437,20 +436,21 @@
                               </div>
                             </div>
 
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                               <div class="form-group">
                                 <label>Date of Birth</label>
                                 <input type="date" class="form-control" value="">
                               </div>
                             </div>
 
-                            <div class="col-md-4 ">
-                              <label class="col-md-6 col-form-label">Special Instruction</label>
-                              <input type="text" class="form-control" placeholder="Instructions" value="">
+                            <div class="col-md-5">
+                              <div class="form-group">
+                                <label>Special Instruction</label>
+                                <input type="text" class="form-control" placeholder="Instructions" value="">
+                              </div>
                             </div>
 
-                            <div class="col-md-1">
-                              <label></label>
+                            <div class="col-md-1" style="margin-top: 13px;">
                               <a class="btn btn-success" id="btnAdd"><i class="fa fa-plus"></i></a>
                             </div>
 
@@ -525,8 +525,7 @@
                               </div>
                             </div>
 
-                            <div class="col-md-1">
-                              <label></label>
+                            <div class="col-md-1" style="margin-top: 13px;">
                               <a class="btn btn-success" id="btnAdd"><i class="fa fa-plus"></i></a>
                             </div>
 
@@ -627,8 +626,7 @@
                           </div>
                         </div>
 
-                        <div class="col-md-1">
-                          <label></label>
+                        <div class="col-md-1" style="margin-top: 14px;">
                           <a class="btn btn-success" id="btnAdd"><i class="fa fa-plus"></i></a>
                         </div>
 
@@ -700,7 +698,7 @@
 
           <div class="card-footer">
             <div class="pull-right">
-              <input type='button' class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Next' />
+              <input type='button' class='btn btn-next btn-fill btn-rose btn-wd' name='next' value='Next'/>
               <a asp-action="Preview" asp-controller="Home" class="btn btn-finish btn-fill btn-rose btn-wd" name="finish" value="Save" style="display: none;">Preview</a>
               <a asp-action="Index" asp-controller="Home" class='btn btn-finish btn-fill btn-rose btn-wd' name='Save'>Submit</a>
               <a asp-action="Save" asp-controller="Home" class='btn btn-finish btn-fill btn-rose btn-wd' name='Save'>Save</a>
@@ -716,14 +714,3 @@
     <!-- wizard container -->
   </div>
 </div>
-
-<script src="../../assets/js/plugins/jquery.bootstrap-wizard.js"></script>
-
-<script>
-  $(document).ready(function () {
-    // Initialise the wizard
-    demo.initNowUiWizard();
-    setTimeout(function () {
-      $('.card.card-wizard').addClass('active');
-    }, 600);
-  });</script>
