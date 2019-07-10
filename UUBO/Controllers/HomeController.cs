@@ -16,11 +16,16 @@ namespace UUBO.Controllers
         {
             return View();
         }
+        
            public IActionResult CreateWill()
         {
             return View();
         }
 
+        public IActionResult Preview()
+        {
+            return View();
+        }
      
         public IActionResult Privacy()
         {
