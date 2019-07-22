@@ -423,46 +423,24 @@
                         <div class="col-md-12 ">
                           <h4>Children / Dependant</h4>
                           <div class="row">
-
-                            <div class="col-md-4 ">
-                              <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" class="form-control" placeholder="Full Name" value="">
-                              </div>
-                            </div>
-
-                            <div class="col-md-2">
-                              <div class="form-group">
-                                <label>Date of Birth</label>
-                                <input type="date" class="form-control" value="">
-                              </div>
-                            </div>
-
-                            <div class="col-md-5">
-                              <div class="form-group">
-                                <label>Special Instruction</label>
-                                <input type="text" class="form-control" placeholder="Instructions" value="">
-                              </div>
-                            </div>
-
-                            <div class="col-md-1" style="margin-top: 13px;">
-                              <a class="btn btn-success" id="btnAdd"><i class="fa fa-plus"></i></a>
-                            </div>
-
-                          </div>
-
-                          <div class="row">
-                            <div class="col-md-8">
-                                <div class="col-md-6 checkbox-radios">
-                                <div class="form-check">
-                                  <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox">
-                                    <span class="form-check-sign"></span>
-                                    Exclude from receving asset
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
+                            <table id="tblChild" class="table" cellpadding="0" cellspacing="0">
+                              <tBody></tBody>
+                              <tfoot>
+                                  <tr>
+                                    <td><input type="text" class="form-control" placeholder="Full Name" id="txtFullName" /></td>
+                                    <td><input type="date" id="txtDate" class="form-control" placeholder="Date-of-Birth" /></td>
+                                    <td><input type="text" id="txtSpecIns" class="form-control" placeholder="Special Instruction" /></td>
+                                    <td>
+                                      <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" id="txtAssetExc">
+                                        <span class="form-check-sign"></span>
+                                        Exclude from receving asset
+                                      </label>
+                                    </td>
+                                    <td> <a class="btn btn-success" id="btnAdd"><i class="fa fa-plus"></i></a></td>
+                                  </tr>
+                              </tfoot>
+                            </table>
                           </div>
                         </div>
                       </div>
@@ -478,49 +456,28 @@
                         <div class="col-md-12">
                           <h4>Guardian</h4>
                           <div class="row">
-
-                            <div class="col-md-3">
-                              <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" class="form-control" placeholder="Full Name" value="">
-                              </div>
-                            </div>
-
-                            <div class="col-md-3">
-                              <div class="form-group">
-                                <label>E-mail</label>
-                                <input type="email" class="form-control" placeholder="example@mail.com" value="">
-                              </div>
-                            </div>
-
-                            <div class="col-md-3">
-                              <div class="form-group">
-                                <label>Address</label>
-                                <input type="text" class="form-control" placeholder="Address" value="">
-                              </div>
-                            </div>
-
-                            <div class="col-md-2 pl-1">
-                              <div class="form-group">
-                                <label>Relationship</label>
-                                <div class="form-group">
-                                  <select class="form-control">
-                                    <option>--select--</option>
-                                    <option>Father</option>
-                                    <option>Mother</option>
-                                    <option>Brother</option>
-                                    <option>Sister</option>
-                                    <option>Wife</option>
-                                    <option>Husband</option>
-                                    <option>Others</option>
-                                  </select>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="col-md-1" style="margin-top: 13px;">
-                              <a class="btn btn-success" id="btnAdd"><i class="fa fa-plus"></i></a>
-                            </div>
+                            <table id="tblGuardian" class="table" cellpadding="0" cellspacing="0">
+                              <tBody></tBody>
+                              <tfoot>
+                                  <tr>
+                                    <td><input type="text" class="form-control" placeholder="Full Name" id="txtName" /></td>
+                                    <td><input type="email" id="txtEmail" class="form-control" placeholder="E-mail" /></td>
+                                    <td><input type="text" id="txtAddress" class="form-control" placeholder="Address" /></td>
+                                    <td><select class="form-control" id="txtRel">
+                                      <option>--select--</option>
+                                      <option>Father</option>
+                                      <option>Mother</option>
+                                      <option>Brother</option>
+                                      <option>Sister</option>
+                                      <option>Wife</option>
+                                      <option>Husband</option>
+                                      <option>Others</option>
+                                      </select>
+                                    </td>
+                                    <td> <a class="btn btn-success" id="btnAddGaurdian"><i class="fa fa-plus"></i></a></td>
+                                  </tr>
+                              </tfoot>
+                            </table>
 
                           </div>
                         </div>
@@ -721,3 +678,148 @@
     <!-- wizard container -->
   </div>
 </div>
+
+<script type="text/javascript">
+    $("body").on("click", "#btnAddGaurdian", function () {
+        //Reference the Name and Country TextBoxes.
+        var txtName = $("#txtName");
+        var txtEmail = $("#txtEmail");
+        var txtAddress = $("#txtAddress");
+        var txtRel = $("#txtRel");
+
+        console.log(txtName.val(), txtEmail.val(), txtAddress.val(), txtRel.val());
+        //Get the reference of the Table's TBODY element.
+        var tBody = $("#tblGuardian > TBODY")[0];
+        //Add Row.
+        var row = tBody.insertRow(-1);
+
+        //Add Name cell.
+        var cell = $(row.insertCell(-1));
+        cell.html(txtName.val());
+
+        //Add Email cell.
+        cell = $(row.insertCell(-1));
+        cell.html(txtEmail.val());
+
+        //Add Address cell.
+        cell = $(row.insertCell(-1));
+        cell.html(txtAddress.val());
+
+        //Add Relationship cell.
+        cell = $(row.insertCell(-1));
+        cell.html(txtRel.val());
+
+        //Add Button cell.
+        cell = $(row.insertCell(-1));
+
+        var btnRemove = $("<a />");
+        btnRemove.attr("class", "btn btn-warning");
+        btnRemove.wrapInner($("<i class='fa fa-minus'></i>"));
+        btnRemove.attr("onclick", "Remove(this);");
+        btnRemove.val("Remove");
+        cell.append(btnRemove);
+
+        //Clear the TextBoxes.
+        txtName.val("");
+        txtEmail.val("");
+        txtAddress.val("");
+        txtRel.val("");
+        var customers = new Array();
+        $("#tblGuardian TBODY TR").each(function () {
+            var row = $(this);
+            var customer = {};
+            customer.Name = row.find("TD").eq(0).html();
+            customer.Percent = row.find("TD").eq(1).html();
+            customers.push(customer);
+        });
+        console.log(customers);
+    });
+    function Remove(button) {
+        //Determine the reference of the Row using the Button.
+        var row = $(button).closest("TR");
+        var name = $("TD", row).eq(0).html();
+        //if (confirm("Do you want to delete: " + name)) {
+        //    //Get the reference of the Table.
+        //    var table = $("#tblCustomers")[0];
+        //    //Delete the Table row using it's Index.
+        //    table.deleteRow(row[0].rowIndex);
+        //}
+        //Get the reference of the Table.
+        var table = $("#tblGuardian")[0];
+        //Delete the Table row using it's Index.
+        table.deleteRow(row[0].rowIndex);
+    };
+</script>
+
+<script type="text/javascript">
+    $("body").on("click", "#btnAdd", function () {
+        //Reference the Name and Country TextBoxes.
+        var txtFullName = $("#txtFullName");
+        var txtDate = $("#txtDate");
+        var txtSpecIns = $("#txtSpecIns");
+        var txtAssetExc = $("#txtAssetExc");
+
+        console.log(txtFullName.val(), txtDate.val(), txtSpecIns.val(), txtAssetExc.val());
+        //Get the reference of the Table's TBODY element.
+        var tBody = $("#tblChild > TBODY")[0];
+        //Add Row.
+        var row = tBody.insertRow(-1);
+
+        //Add Name cell.
+        var cell = $(row.insertCell(-1));
+        cell.html(txtFullName.val());
+
+        //Add Date cell.
+        cell = $(row.insertCell(-1));
+        cell.html(txtDate.val());
+
+        //Add Special Instruction cell.
+        cell = $(row.insertCell(-1));
+        cell.html(txtSpecIns.val());
+
+        //Add Asset Exclusion cell.
+        cell = $(row.insertCell(-1));
+        cell.html(txtAssetExc.val());
+
+        //Add Button cell.
+        cell = $(row.insertCell(-1));
+
+        var btnRemove = $("<a />");
+        btnRemove.attr("class", "btn btn-warning");
+        btnRemove.wrapInner($("<i class='fa fa-minus'></i>"));
+        btnRemove.attr("onclick", "Remove(this);");
+        btnRemove.val("Remove");
+        cell.append(btnRemove);
+
+        //Clear the TextBoxes.
+        txtFullName.val("");
+        txtDate.val("");
+        txtSpecIns.val("");
+        txtAssetExc.val("");
+        var customers = new Array();
+        $("#tblChild TBODY TR").each(function () {
+          var row = $(this);
+          var customer = {};
+          customer.Name = row.find("TD").eq(0).html();
+          customer.Percent = row.find("TD").eq(1).html();
+          customers.push(customer);
+        });
+        console.log(customers);
+    });
+
+    function Remove(button) {
+        //Determine the reference of the Row using the Button.
+        var row = $(button).closest("TR");
+        var name = $("TD", row).eq(0).html();
+        //if (confirm("Do you want to delete: " + name)) {
+        //    //Get the reference of the Table.
+        //    var table = $("#tblCustomers")[0];
+        //    //Delete the Table row using it's Index.
+        //    table.deleteRow(row[0].rowIndex);
+        //}
+        //Get the reference of the Table.
+        var table = $("#tblChild")[0];
+        //Delete the Table row using it's Index.
+        table.deleteRow(row[0].rowIndex);
+    };
+</script>
