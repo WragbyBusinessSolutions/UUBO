@@ -12,15 +12,22 @@ namespace UUBO.Models
     public virtual Will WillId { get; set; }
 
     [Display(Name = "Name")]
+    [Required]
     public string Name { get; set; }
 
+
     [Display(Name = "Address")]
+    [Required]
     public string Address { get; set; }
 
+
     [Display(Name = "Email")]
+    [Required]
     public string Email { get; set; }
 
+
     [Display(Name = "Relationship")]
+    [Required]
     public Enum Relationship { get; set; }
   }
 }
